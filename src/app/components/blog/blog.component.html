@@ -1,0 +1,51 @@
+  <!-- Blog Content -->
+
+  <section id="blog">
+    <div class="container-fluid">
+
+      <h2 class="section-heading">Blog</h2>
+
+        <div class="container postContainer"*ngFor="let post of postsContent">
+
+
+          <div class="text-center" id="{{post.slug}}">
+            <div class="col-xs-2 dateDiv">
+              <i class="fa fa-calendar fa-3x"></i>
+              <h5 class="">
+                {{post.date | date: 'dd/MM/yyyy'}}
+              </h5>
+            </div>
+            <a class="" ng-href="#" (click)="post.showAll = !post.showAll">
+              <i class="fa fa-2x pull-right" [ngClass]="post.showAll ?'fa-minus-circle':'fa-plus-circle'"></i>
+            </a>
+            <div>
+              <h2 class="subHeader">
+                {{post.title.rendered}}
+              </h2>
+              <h4 class="subHeader">
+                AUTHOR: {{getAuthor(post.author)}}
+              </h4>
+            </div>
+          </div>
+
+
+
+          <div  [ngSwitch]="post.showAll">
+            <div *ngSwitchCase="true" innerHtml="{{post.content.rendered }}"></div>
+            <div *ngSwitchCase="false" innerHtml="{{post.content.rendered | slice:0:500 }}..."></div>
+            <div *ngSwitchDefault innerHtml="{{post.content.rendered | slice:0:500 }}...">
+            </div>
+          </div>
+
+
+
+
+          <button class="btn btn-info" (click)="post.showAll = !post.showAll">
+            {{post.showAll ? 'Hide Full Post' : 'Show Full Post'}}
+          </button>
+
+        </div>
+
+
+    </div>
+  </section>

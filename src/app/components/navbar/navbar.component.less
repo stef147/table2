@@ -1,0 +1,54 @@
+
+/*---------------------------------------------*/
+/*Navbar styling*/
+/*---------------------------------------------*/
+
+#navbar{
+
+  color: whitesmoke;
+  text-transform: uppercase;
+  font-size: 1.5em;
+
+  a:hover {
+    color: #fed136;
+  }
+
+  .active {
+    font-weight: bolder;
+  }
+
+  .fa {
+    color: black;
+    padding-left: 0.5em;
+  }
+
+  .fa-instagram {
+    margin-right: 2em;
+  }
+
+  .fa:hover, .fa:active {
+    color: #fed136;
+  }
+
+  .dropdown-toggle::after {
+    display:none
+  }
+
+  .dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+
+
+  @media (min-width: 1024px) {
+    #navbar{
+      max-height: 20vh;
+
+    }
+    .table-home {
+      display: inline-block;
+      margin-left: 1em;
+    }
+  }
+
+}
+

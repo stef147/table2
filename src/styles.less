@@ -1,0 +1,241 @@
+/*---------------------------------------------*/
+/*Main html styling*/
+/*---------------------------------------------*/
+
+html, body{
+  height:100%;
+  width: 100%;
+  min-height:100%;
+}
+html *
+{
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+app-root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  width: 100%;
+}
+
+
+#wrapper{
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+@media (min-width: 1024px) {
+  body.bg {
+    background-color: red;
+    background:url('assets/img/breakfastLarge.jpg')no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size:cover;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    font-size: 85%;
+  }
+  body.bg {
+    background: url('assets/img/breakfastMedium.jpg')no-repeat center center fixed;
+    background-position: 65% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size:cover;
+  }
+}
+
+
+@media (max-width: 768px) {
+  body {
+    font-size: 75%;
+  }
+  body.bg {
+    background: url('assets/img/breakfastSmall.jpg')no-repeat center center fixed;
+    background-position: 65% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size:cover;
+  }
+}
+
+
+/*---------------------------------------------*/
+/*Basic Font styling*/
+/*---------------------------------------------*/
+
+p {
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+a{
+  color: black;
+}
+
+a:hover {
+  color: gray;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.subHeader{
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  font-size: 1.5em;
+  padding-bottom: 0.5em;
+}
+
+
+
+/*---------------------------------------------*/
+/*Button Styling*/
+/*---------------------------------------------*/
+ul.social-buttons {
+  margin-bottom: 0;
+}
+
+ul.social-buttons li a {
+  display: block;
+  background-color: black;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  font-size: 20px;
+  line-height: 40px;
+  color: white;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+ul.social-buttons li a:hover, ul.social-buttons li a:active {
+  color: #fed136;
+}
+
+
+
+/*---------------------------------------------*/
+/*Useful text and image styling classes*/
+/*---------------------------------------------*/
+.text-muted {
+  color: #777777;
+}
+
+.text-primary {
+  color: #fed136 !important;
+}
+
+.img-centered {
+  margin: 0 auto;
+}
+
+.intro-text {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.intro-text .intro-lead-in {
+  font-style: italic;
+  font-size: 22px;
+  line-height: 22px;
+  margin-bottom: 25px;
+}
+
+.intro-text .intro-heading {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 768px) {
+  .intro-text {
+    padding-top: 300px;
+    padding-bottom: 200px;
+  }
+
+  .intro-text .intro-lead-in {
+    font-style: italic;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 25px;
+  }
+
+  .intro-text .intro-heading {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 75px;
+    margin-bottom: 50px;
+  }
+}
+
+/*---------------------------------------------*/
+/*#Section styling*/
+/*---------------------------------------------*/
+
+section {
+  min-height: 90vh;
+
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+section h2.section-heading {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  letter-spacing: 0.25em;
+}
+
+h4.subHeader{
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  font-size: 1.5em;
+  padding-bottom: 0.5em;
+  text-align: center;
+}
+
+h2.subHeader{
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  font-size: 2em;
+  padding-bottom: 0.5em;
+  text-align: center;
+}
+
+section .section-subheading {
+  font-size: 2em;
+  margin-bottom: 1em;
+  letter-spacing: 0.25em;
+  text-transform: none;
+  font-style: italic;
+  font-weight: 500;
+}
+
+
+
+
+

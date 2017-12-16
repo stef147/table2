@@ -1,0 +1,106 @@
+<!--Navbar Partial html-->
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded" id="navbar">
+
+  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="toggleCollapsed()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <ul class="navbar-nav mr-auto">
+    <a class="table-home" routerLink="/" (click)="toggleCollapsed()">
+      <img src="../assets/img/Logo100.png">
+    </a>
+  </ul>
+
+  <div [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+
+      <li class="nav-item"[routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" [routerLink]="['/']" (click)="toggleCollapsed()">
+          Home
+        </a>
+      </li>
+
+      <li class="nav-item dropdown"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link dropdown-toggle"  id="aboutDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          ABOUT
+        </a>
+        <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+          <a class="dropdown-item" routerLink="/about" (click)="toggleCollapsed()">
+            ABOUT
+          </a>
+          <a class="dropdown-item" routerLink="/beliefs" (click)="toggleCollapsed()">
+            BELIEFS
+          </a>
+          <a class="dropdown-item" routerLink="/leadership" (click)="toggleCollapsed()">
+            LEADERSHIP
+          </a>
+          <a class="dropdown-item" routerLink="/values" (click)="toggleCollapsed()">
+            VALUES
+          </a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link dropdown-toggle" id="whatsonDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          WHAT'S ON
+        </a>
+        <div class="dropdown-menu" aria-labelledby="whatsonDropdown">
+          <a class="dropdown-item" routerLink="/bird" (click)="toggleCollapsed()">
+            BIRDTABLE
+          </a>
+          <!--<a class="dropdown-item" routerLink="/calendar" (click)="toggleCollapsed()">-->
+            <!--CALENDAR-->
+          <!--</a>-->
+          <a class="dropdown-item" routerLink="/discipleship" (click)="toggleCollapsed()">
+            DISCIPLESHIP
+          </a>
+          <a class="dropdown-item" routerLink="/prayer" (click)="toggleCollapsed()">
+            PRAYER ROOM
+          </a>
+          <a class="dropdown-item" routerLink="/fridays" (click)="toggleCollapsed()">
+            TABLE Fridays
+          </a>
+          <a class="dropdown-item" routerLink="/kids" (click)="toggleCollapsed()">
+            TABLE KIDS
+          </a>
+          <a class="dropdown-item" routerLink="/tots" (click)="toggleCollapsed()">
+            TABLE Tots
+          </a>
+          <a class="dropdown-item" routerLink="/witc" (click)="toggleCollapsed()">
+            WITC
+          </a>
+        </div>
+      </li>
+
+      <li class="nav-item"[routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" [routerLink]="['/blog']" (click)="toggleCollapsed()">
+          BLOG
+        </a>
+      </li>
+
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" [routerLink]="['/contact']" (click)="toggleCollapsed()">
+          CONTACT
+        </a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" [routerLink]="['/giving']" (click)="toggleCollapsed()">
+          GIVING
+        </a>
+      </li>
+
+
+      <li class="nav-item">
+        <a href="https://www.facebook.com/tabletandragee/"  target="_blank" (click)="toggleCollapsed()">
+          <i class="fa fa-facebook fa-2x"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="https://www.instagram.com/tabletandragee/" target="_blank" (click)="toggleCollapsed()">
+          <i class="fa fa-instagram fa-2x"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

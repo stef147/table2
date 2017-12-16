@@ -1,0 +1,33 @@
+#leadership{
+  background: rgba(245,245,245,0.8);
+  color: black;
+
+  .dl-image {
+    content: url("../../../assets/img/davidAndLindaL.jpg");
+    padding-top:2em;
+    display: block;
+    margin:  auto;
+  }
+
+
+  //Needed for firefox
+  .dl-image::after {
+    content: url("../../../assets/img/davidAndLindaL.jpg");
+  }
+
+  @media (max-width: 768px) {
+    .dl-image {
+      content: url("../../../assets/img/davidAndLindaS.jpg");
+      padding-top:2em;
+      display: block;
+      margin:  auto;
+    }
+
+
+    //Needed for firefox
+    .dl-image::after {
+      content: url("../../../assets/img/davidAndLindaS.jpg");
+    }
+  }
+
+}

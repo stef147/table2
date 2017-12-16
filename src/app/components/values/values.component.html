@@ -1,0 +1,15 @@
+  <!-- Values Content -->
+
+  <section id="values">
+    <div class="container text-center">
+      <h2 class="section-heading">Values</h2>
+
+      <!--categoreis === 3 - 3 corresponds to the values category on poasts-->
+      <div id="{{post.slug}}" *ngFor="let post of postContent">
+        <a *ngIf="post.categories[0] === 3" routerLink="/blog" fragment="{{post.slug}}">
+          <h4 class="subHeader">{{post.title.rendered}}</h4>
+        </a>
+      </div>
+
+    </div>
+  </section>

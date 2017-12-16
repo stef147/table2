@@ -1,0 +1,30 @@
+#giving{
+  background: rgba(245,245,245,0.8);
+  color: black;
+
+  .churchSuiteLogo {
+    content: url("../../../assets/img/green-gift.png");
+    padding-top: 2em;
+    display: block;
+    margin:  auto;
+  }
+
+  //Needed for firefox
+  .churchSuiteLogo::after {
+    content: url("../../../assets/img/green-gift.png");
+    padding-top: 2em;
+    display: block;
+    margin:  auto;
+  }
+
+  /* Portrait phones and smaller */
+  @media (max-width: 720px) {
+    .churchSuiteLogo {
+      content: url("../../../assets/img/green-giftSmall.png");
+    }
+    .churchSuiteLogo::after {
+      content: url("../../../assets/img/green-giftSmall.png");
+
+    }
+  }
+}
