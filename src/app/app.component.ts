@@ -16,25 +16,32 @@ import {ContentService} from './services/content.service';
 export class AppComponent {
   pageContent: any;
   postsContent: any;
+  eventsContent: any;
 
   constructor(private contentService: ContentService) {};
 
 
   ngOnInit() {
     this.contentService.getPages().subscribe(data => {
-      console.log('all');
+      console.log('all pages');
       this.pageContent = data;
       console.log(data);
     }, error => console.log('Could not load Page Content'));
 
     this.contentService.getPosts().subscribe(data => {
-      console.log('all');
+      console.log('all posts');
       this.postsContent = data;
       console.log(data);
     }, error => console.log('Could not load Posts Content'));
 
+    this.contentService.getEvents().subscribe(data => {
+      console.log('all events');
+      this.eventsContent = data;
+      console.log(data);
+    }, error => console.log('Could not load Events Content'));
 
-    };
+
+    }
 
 
 
