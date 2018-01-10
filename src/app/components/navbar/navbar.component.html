@@ -49,9 +49,9 @@
           <a class="dropdown-item" routerLink="/bird" (click)="toggleCollapsed()">
             BIRDTABLE
           </a>
-          <!--<a class="dropdown-item" routerLink="/calendar" (click)="toggleCollapsed()">-->
-            <!--CALENDAR-->
-          <!--</a>-->
+          <a class="dropdown-item" routerLink="/calendar" (click)="toggleCollapsed()">
+            CALENDAR
+          </a>
           <a class="dropdown-item" routerLink="/discipleship" (click)="toggleCollapsed()">
             DISCIPLESHIP
           </a>
@@ -88,6 +88,17 @@
         <a class="nav-link" [routerLink]="['/giving']" (click)="toggleCollapsed()">
           GIVING
         </a>
+      </li>
+
+      <li class="nav-item dropdown"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link dropdown-toggle"  id="resourcesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          RESOURCES
+        </a>
+        <div class="dropdown-menu" aria-labelledby="resourcesDropdown">
+          <a class="dropdown-item" routerLink="/bible" (click)="toggleCollapsed()">
+            BIBLE READING PLAN
+          </a>
+        </div>
       </li>
 
 

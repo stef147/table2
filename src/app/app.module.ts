@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 
 import { AboutComponent } from './components/about/about.component';
 import { BeliefsComponent } from './components/beliefs/beliefs.component';
+import { BibleComponent } from './components/bible/bible.component';
 import { BirdComponent } from './components/bird/bird.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
@@ -30,6 +31,8 @@ import { ValuesComponent } from './components/values/values.component';
 import { WITCComponent } from './components/witc/witc.component';
 
 import { AppRoutingModule } from './app.routing';
+import { PopoverModule } from 'ngx-bootstrap';
+import { CarouselModule } from 'ngx-bootstrap';
 import { AgmCoreModule } from '@agm/core';
 import { ContentService } from './services/content.service';
 
@@ -38,6 +41,7 @@ import { ContentService } from './services/content.service';
     AppComponent,
     AboutComponent,
     BeliefsComponent,
+    BibleComponent,
     BirdComponent,
     BlogComponent,
     CalendarComponent,
@@ -60,6 +64,8 @@ import { ContentService } from './services/content.service';
   ],
   imports: [
     AlertModule.forRoot(),
+    PopoverModule.forRoot(),
+    CarouselModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpModule,

@@ -25,19 +25,19 @@ export class AppComponent {
     this.contentService.getPages().subscribe(data => {
       console.log('all pages');
       this.pageContent = data;
-      console.log(data);
+      console.log( this.pageContent);
     }, error => console.log('Could not load Page Content'));
 
     this.contentService.getPosts().subscribe(data => {
       console.log('all posts');
       this.postsContent = data;
-      console.log(data);
+      console.log(this.postsContent);
     }, error => console.log('Could not load Posts Content'));
 
     this.contentService.getEvents().subscribe(data => {
       console.log('all events');
       this.eventsContent = data;
-      console.log(data);
+      console.log(this.eventsContent);
     }, error => console.log('Could not load Events Content'));
 
 

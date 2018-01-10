@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { BeliefsComponent } from './components/beliefs/beliefs.component';
+import { BibleComponent } from './components/bible/bible.component';
 import { BirdComponent } from './components/bird/bird.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
@@ -30,6 +31,10 @@ const appRoutes: Routes = [
   {
     path: 'beliefs',
     component: BeliefsComponent
+  },
+  {
+    path: 'bible',
+    component: BibleComponent
   },
   {
     path: 'bird',
