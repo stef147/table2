@@ -1,0 +1,38 @@
+
+<!-- Events section-->
+<section  id="events">
+
+  <div class="container-fluid">
+
+    <div class="carouselRow">
+
+      <div>
+        <carousel id="carousel" [interval]="myInterval" [noWrap]="noWrapSlides" [(activeSlide)]="activeSlideIndex" >
+          <slide *ngFor="let event of upcomingEvents; let index = index">
+
+            <div class="col-xs-4">
+              <img class="carouselImage" [src]="event.cover.source" alt="source slide" style="display: block; width: 100%;">
+
+            </div>
+
+
+            <div class="col-xs-4">
+              <div class="">
+                <h3>{{event.name}}</h3>
+                <h3>{{event.description}}</h3>
+                <h4>Slide {{index}}</h4>
+              </div>
+            </div>
+
+
+          </slide>
+        </carousel>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
