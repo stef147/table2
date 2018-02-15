@@ -16,7 +16,6 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { ChristmasComponent } from './components/christmas/christmas.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DiscipleshipComponent } from './components/discipleship/discipleship.component';
-import { EventsComponent } from './components/events/events.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FridaysComponent } from './components/fridays/fridays.component';
 import { GivingComponent } from './components/giving/giving.component';
@@ -49,7 +48,6 @@ import { ContentService } from './services/content.service';
     ChristmasComponent,
     ContactComponent,
     DiscipleshipComponent,
-    EventsComponent,
     FooterComponent,
     FridaysComponent,
     GivingComponent,
