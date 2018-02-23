@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { fadeInAnimation } from '../../app.animations';
+import {Component} from '@angular/core';
+import {fadeInAnimation} from '../../app.animations';
 import {ContentService} from '../../services/content.service';
 import * as moment from 'moment';
 
@@ -7,19 +7,19 @@ import * as moment from 'moment';
 @Component({
   selector: 'calendar',
   templateUrl: './calendar.component.html',
-  styleUrls:['./calendar.component.less'],
+  styleUrls: ['./calendar.component.less'],
   animations: [fadeInAnimation],
-  host: { '[@fadeInAnimation]': '' }
+  host: {'[@fadeInAnimation]': ''}
 })
 export class CalendarComponent {
 
   eventsContent: any;
   currentDate = moment();
-   startMonth;
-   endMonth;
-   totalNumberOfDaysInMonth;
-   daysOfMonthArray;
-   eventsForCurrentMonth;
+  startMonth;
+  endMonth;
+  totalNumberOfDaysInMonth;
+  daysOfMonthArray;
+  eventsForCurrentMonth;
 
   dayNames = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   daysInAWeek = [1, 2, 3, 4, 5, 6, 7];
@@ -41,19 +41,19 @@ export class CalendarComponent {
 
   getDaysForCurrentMonth() {
     var numberOfWeeksInMonth = (this.endMonth.isoWeek() - this.startMonth.isoWeek()) + 1;
-    var i =1;
+    var i = 1;
     var currentWeek = this.startMonth.isoWeek();
     var weekArray = [];
     var weeksInMonthArray = [];
 
-    while(i <= this.totalNumberOfDaysInMonth) {
+    while (i <= this.totalNumberOfDaysInMonth) {
       var current = this.startMonth.clone().date(i);
-      if(current.isoWeek() === currentWeek) {
+      if (current.isoWeek() === currentWeek) {
         this.addAnyEventsForCurrentDay(current);
         weekArray.push(current);
         i++;
       }
-      else{
+      else {
         weeksInMonthArray.push(weekArray);
         currentWeek = currentWeek + 1;
         weekArray = [];
@@ -69,47 +69,71 @@ export class CalendarComponent {
   }
 
   addAnyEventsForCurrentDay(current) {
-    for(var i = 0; i < this.eventsForCurrentMonth.length; i++) {
-      if(moment(this.eventsForCurrentMonth[i].start).format('YYYY-MM-DD') === current.format('YYYY-MM-DD')) {
+    for (var i = 0; i < this.eventsForCurrentMonth.length; i++) {
+      if (moment(this.eventsForCurrentMonth[i].start).format('YYYY-MM-DD') === current.format('YYYY-MM-DD')) {
         current.events = [];
         current.events.push(this.eventsForCurrentMonth[i]);
       }
     }
   }
 
-
-  getEventsForCurrentMonth(startMonth){
+  //TODO Refactor this method for recurring vs single events- messy!!!!!!
+  getEventsForCurrentMonth(startMonth) {
     console.log('eventsinfo');
     console.log(this.eventsContent);
     var eventsForCurrentMonth = [];
     var numberOfEventTypes = this.eventsContent.length;
-    for(var i = 0; i < this.eventsContent.length; i++ ) {
-       var eventTimes = this.eventsContent[i].event_times;
+    for (var i = 0; i < this.eventsContent.length; i++) {
+      var eventTimes = this.eventsContent[i].event_times;
+      var singleEventStartTime = this.eventsContent[i].start_time;
 
-      for(var j = 0; j < eventTimes.length; j++){
-        var month = (eventTimes[j].start_time).split('-')[1]
+      //TODO refactor this
+      if (eventTimes) {
+        for (var j = 0; j < eventTimes.length; j++) {
+          var month = (eventTimes[j].start_time).split('-')[1]
 
-        if(month === startMonth) {
-          let event = {} as any;
-          event.description = this.eventsContent[i].description;
-          event.name = this.eventsContent[i].name;
-          event.place = this.eventsContent[i].place.name;
-          event.cover = this.eventsContent[i].cover;
-          event.id = eventTimes[j].id;
-          event.start = eventTimes[j].start_time;
-          event.end = eventTimes[j].end_time;
-          event.link = "https://www.facebook.com/events/"+event.id;
+          if (month === startMonth) {
+            let event = {} as any;
+            event.description = this.eventsContent[i].description;
+            event.name = this.eventsContent[i].name;
+            event.place = this.eventsContent[i].place.name;
+            event.cover = this.eventsContent[i].cover;
+            event.id = eventTimes[j].id;
+            event.start = eventTimes[j].start_time;
+            event.end = eventTimes[j].end_time;
+            event.link = "https://www.facebook.com/events/" + event.id;
 
-          eventsForCurrentMonth.push(event);
+            eventsForCurrentMonth.push(event);
+          }
         }
+      } else if (singleEventStartTime) {
+        let event = {} as any;
+        if (this.eventsContent[i].description) {
+          event.description = this.eventsContent[i].description;
+        } else {
+          event.description = this.eventsContent[i].name;
+        }
+
+        if(this.eventsContent[i].place) {
+          event.place = this.eventsContent[i].place.name;
+        } else {
+          event.place = 'TABLE TANDRAGEE';
+        }
+        event.name = this.eventsContent[i].name;
+        event.cover = this.eventsContent[i].cover;
+        event.id = this.eventsContent[i].id;
+        event.start = singleEventStartTime;
+        event.link = "https://www.facebook.com/events/" + event.id;
+
+        eventsForCurrentMonth.push(event);
       }
+
     }
     console.log('eventsForCurrentMonth');
     console.log(eventsForCurrentMonth);
 
     return eventsForCurrentMonth;
   }
-
 
 
   prevMonth(): void {

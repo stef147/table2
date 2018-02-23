@@ -5,10 +5,14 @@
       <h2 class="section-heading">Values</h2>
 
       <!--categoreis === 3 - 3 corresponds to the values category on poasts-->
-      <div id="{{post.slug}}" *ngFor="let post of postContent">
+      <div id="{{post.slug}}" *ngFor="let post of postContent.reverse()">
         <a *ngIf="post.categories[0] === 3" routerLink="/blog" fragment="{{post.slug}}">
           <h4 class="subHeader">{{post.title.rendered}}</h4>
         </a>
+      </div>
+
+      <div  *ngFor="let header of valuesHeaders">
+        <h4 class="subHeader">{{header}}</h4>
       </div>
 
     </div>

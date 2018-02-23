@@ -10,14 +10,24 @@ import { fadeInAnimation } from '../../app.animations';
   host: { '[@fadeInAnimation]': '' }
 })
 export class ValuesComponent {
-  postContent: any;
+  postContent: any [] = [];
+  valuesHeaders: string[] = ['Generosity',
+                              'Mission',
+                              'Community',
+                              'Prayer',
+                              'Word & Spirit'];
 
+
+  valuesToDisplay: string[] = [];
 
   constructor(private contentService: ContentService) {}
 
   ngOnInit() {
     this.contentService.getPosts().subscribe(data => {
       this.postContent = data;
+      console.log('hello!!!!');
+      console.log( this.postContent);
+
     }, error => console.log('Could not load Page Content'));
   };
 

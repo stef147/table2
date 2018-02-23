@@ -17,7 +17,7 @@ export class ContentService {
 
   private pagesUrl = 'http://tabletandragee.org/Content/wp-json/wp/v2/pages';
   private postsUrl = 'http://tabletandragee.org/Content/wp-json/wp/v2/posts';
-  private eventsUrl = 'https://graph.facebook.com/tabletandragee/events?fields=cover,name,description,place,id,event_times&access_token=' + this.id;
+  private eventsUrl = 'https://graph.facebook.com/tabletandragee/events?fields=cover,name,description,place,id,start_time,event_times&access_token=' + this.id;
 
   allPages: any;
   allPosts: any;
