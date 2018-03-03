@@ -11,7 +11,9 @@ import { fadeInAnimation } from '../../app.animations';
 })
 export class ValuesComponent {
   postContent: any [] = [];
-  valuesHeaders: string[] = ['Generosity',
+  valuesHeaders: string[] = ['Jesus Is Lord',
+                              'Discipleship',
+                              'Generosity',
                               'Mission',
                               'Community',
                               'Prayer',
@@ -19,6 +21,19 @@ export class ValuesComponent {
 
 
   valuesToDisplay: string[] = [];
+
+  checkIfPostPresent(value){
+    var valuePresent = false;
+    console.log('checkIfPostPresent');
+    console.log(value);
+    this.postContent.forEach(function(post) {
+      if(post.title.rendered === value) {
+        valuePresent = true;
+      }
+    });
+    return valuePresent;
+  }
+
 
   constructor(private contentService: ContentService) {}
 

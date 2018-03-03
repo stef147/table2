@@ -1,6 +1,6 @@
   <!-- Values Content -->
 
-  <section id="values">
+  <section id="values" *ngIf="postContent">
     <div class="container text-center">
       <h2 class="section-heading">Values</h2>
 
@@ -11,8 +11,10 @@
         </a>
       </div>
 
-      <div  *ngFor="let header of valuesHeaders">
-        <h4 class="subHeader">{{header}}</h4>
+
+      <!--We check to see if we have any posts for each value, if not add a stubbed header-->
+      <div   *ngFor="let value of valuesHeaders">
+        <h4 *ngIf="!checkIfPostPresent(value)"  class="subHeader">{{value}}</h4>
       </div>
 
     </div>
