@@ -15,8 +15,8 @@ export class ContentService {
   private startMonth = moment().startOf('month').unix();
   private endMonth  = moment().endOf('month').unix();
 
-  private pagesUrl = 'http://tabletandragee.org/Content/wp-json/wp/v2/pages';
-  private postsUrl = 'http://tabletandragee.org/Content/wp-json/wp/v2/posts';
+  private pagesUrl = 'https://tabletandragee.org/Content/wp-json/wp/v2/pages';
+  private postsUrl = 'https://tabletandragee.org/Content/wp-json/wp/v2/posts';
   private eventsUrl = 'https://graph.facebook.com/tabletandragee/events?fields=cover,name,description,place,id,start_time,event_times&access_token=' + this.id;
 
   allPages: any;

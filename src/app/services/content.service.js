@@ -13,7 +13,7 @@ var ContentService = (function () {
         console.log('ContentService started');
     }
     ContentService.prototype.getContent = function () {
-        var apiUrl = 'http://tabletandragee.org/Content/wp-json/wp/v2/pages?slug=';
+        var apiUrl = 'https://tabletandragee.org/Content/wp-json/wp/v2/pages?slug=';
         return this.http.get(apiUrl)
             .map(function (res) { return res.json(); });
     };

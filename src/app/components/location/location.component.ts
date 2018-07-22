@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class LocationComponent {
   title: string = 'Google Map';
-  lat: number = 54.352537;
-  lng: number = -6.412043;
-  zoom: number = 15;
+  lat: number = 54.352590;
+  lng: number = -6.411388;
+  zoom: number = 18;
 }
 
 
